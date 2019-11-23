@@ -1,0 +1,27 @@
+<div *ngIf="Employees.length > 0 then Data else NoDataFound"> </div>
+<ng-template #Data>
+  <table class="table body">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of Employees">
+        <th scope="row">{{emp.id}}</th>
+        <td>{{emp.name}}</td>
+        <td>{{emp.phone}}</td>
+        <td>{{emp.email}}</td>
+        <td class="edit" routerLink="/emp-edit/{{emp.id}}">Edit</td>
+        <td class="delete" (click)="deleteEmployee(emp.id)">Delete</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #NoDataFound>
+<p>No Data Found</p>
+</ng-template>

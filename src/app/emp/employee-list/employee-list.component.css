@@ -1,0 +1,11 @@
+.edit,.delete{
+    cursor: pointer;
+    display: inline-block;
+    color: blue;
+}
+.edit{
+    margin-right: 10px;
+}
+.body{
+    margin-top: 30px;
+}
